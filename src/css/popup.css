@@ -1,0 +1,18 @@
+body {
+    margin: 0;
+    width: 400px;
+    height: 600px;
+}
+
+#box {
+    text-align: center;
+}
+
+#kuaishou {
+    width: 100%;
+}
+
+#kuaishou—label {
+    display: inline-block;
+    width: 100%;
+}

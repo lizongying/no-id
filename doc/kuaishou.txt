@@ -1,0 +1,4 @@
+获取快手user_id
+1. 安装谷歌插件No Id。https://chrome.google.com/webstore/detail/no-id/mpncopancfclmnodclcbiciopfbjoocf
+2. 打开快手网站。https://live.kuaishou.com
+3. 打开No Id，输入快手个人页网址，获取获取快手user_id
