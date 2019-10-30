@@ -1,4 +1,4 @@
-// 通知
+// notify
 const notify = (data) => {
     const popup = chrome.extension.getViews({type: 'popup'})[0];
     console.log(popup.$ui[data[0]]);
@@ -23,6 +23,17 @@ const getKuaishou = (value) => {
     })
 };
 
+// Xiaohongshu
+const getXiaohongshu = (value) => {
+    const re = /www\.xiaohongshu\.com\/user\/profile\/(.+?)\?/;
+    const result = value.match(re);
+    if (result) {
+        console.log(result[1]);
+        notify(['setXiaohongshu', result[1]]);
+    }
+};
+
 window.bg = {
     getKuaishou: getKuaishou,
+    getXiaohongshu: getXiaohongshu,
 };

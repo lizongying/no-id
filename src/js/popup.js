@@ -7,24 +7,23 @@ const setKuaishou = (value) => {
     label_kuaishou.value = value;
 };
 
+const setXiaohongshu = (value) => {
+    const label_xiaohongshu = document.querySelector('#xiaohongshu-label');
+    label_xiaohongshu.value = value;
+};
+
 // ui
 window.$ui = {
     setKuaishou: setKuaishou,
+    setXiaohongshu: setXiaohongshu,
 };
 
 const input_kuaishou = document.querySelector('#kuaishou');
 input_kuaishou.onchange = (() => {
-    // setKuaishou(input_kuaishou.value);
-    // chrome.cookies.remove({
-    //         'url': 'https://live.kuaishou.com/',
-    //         'name': 'did',
-    //     }
-    // );
-    // chrome.cookies.set({
-    //         'url': 'https://live.kuaishou.com/',
-    //         'name': 'did',
-    //         'value': 'web_818d6b04375e4889845c9595ee1a5c04'
-    //     }
-    // );
     bg.getKuaishou(input_kuaishou.value);
+});
+
+const input_xiaohongshu = document.querySelector('#xiaohongshu');
+input_xiaohongshu.onchange = (() => {
+    bg.getXiaohongshu(input_xiaohongshu.value);
 });

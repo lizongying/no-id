@@ -8,11 +8,12 @@ body {
     text-align: center;
 }
 
-#kuaishou {
+#kuaishou, #xiaohongshu {
     width: 100%;
+    text-overflow: ellipsis;
 }
 
-#kuaishou—label {
+#kuaishou—label, #xiaohongshu-label {
     display: inline-block;
     width: 100%;
 }
