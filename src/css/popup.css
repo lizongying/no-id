@@ -8,12 +8,16 @@ body {
     text-align: center;
 }
 
-#kuaishou, #xiaohongshu {
+#url {
     width: 100%;
     text-overflow: ellipsis;
 }
 
-#kuaishou—label, #xiaohongshu-label {
+#user-id {
     display: inline-block;
     width: 100%;
+}
+
+.align-left {
+    text-align: left;
 }

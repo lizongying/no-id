@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "No Id",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "No Id",
   "browser_action": {
     "default_title": "No Id",
@@ -17,7 +17,9 @@
   "permissions": [
     "activeTab",
     "cookies",
-    "https://live.kuaishou.com/*"
+    "https://live.kuaishou.com/*",
+    "https://www.iesdouyin.com/*",
+    "https://v.douyin.com/*"
   ],
   "options_page": "options.html"
 }
