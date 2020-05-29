@@ -1,4 +1,4 @@
-import '../css/options.css'
+// import '../css/options.css'
 
 const bg = chrome.extension.getBackgroundPage().bg;
 

@@ -1,4 +1,4 @@
-import '../css/popup.css';
+// import '../css/popup.css';
 
 const bg = chrome.extension.getBackgroundPage().bg;
 

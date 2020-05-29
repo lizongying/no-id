@@ -10,13 +10,21 @@ const getKuaishou = (value) => {
     notify(['setUserId', '']);
     return;
   }
-  fetch(value.split('?', 1)[0], {
+  let url ='https://live.kuaishou.com/graphql';
+  let data = {"operationName": "sensitiveUserInfoQuery",
+    "variables": {"principalId": value.split('?', 1)[0].split('/')[4]},
+    "query": "query sensitiveUserInfoQuery($principalId: String) {sensitiveUserInfo(principalId: $principalId) {userId}}"};
+  console.log(data);
+  fetch(url, {
     headers: {
-      'content-type': 'text/html;',
+      'content-type': 'application/json',
     },
+    body: JSON.stringify(data),
+    method: 'POST',
   }).then(function(response) {
     return response.text();
   }).then(function(text) {
+    console.log(text);
     const re = /"userId":"(\d+?)"/;
     const result = text.match(re);
     if (result) {
@@ -64,6 +72,18 @@ const getDouyin = (value) => {
   });
 };
 
+// Wanmeicaizhuang
+const getWanmeicaizhuang = (value) => {
+  const re = /www\.beautycircle\.com\/profile\/(\d+)/;
+  const result = value.match(re);
+  if (result) {
+    console.log(result[1]);
+    notify(['setUserId', result[1]]);
+  } else {
+    notify(['setUserId', '']);
+  }
+};
+
 const getUserId = (type, value) => {
   console.log(type, value);
   switch (type) {
@@ -75,6 +95,9 @@ const getUserId = (type, value) => {
       break;
     case 'douyin':
       getDouyin(value);
+      break;
+    case 'wanmeicaizhuang':
+      getWanmeicaizhuang(value);
       break;
     default:
       break;
