@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
   "name": "No Id",
-  "version": "0.0.6",
-  "description": "No Id",
+  "version": "0.0.7",
+  "description": "根据快手、小红书、抖音、玩美彩妆、闺蜜美妆、唯美美妆个人页网址/用户名获取UserId。",
   "browser_action": {
     "default_title": "No Id",
     "default_popup": "popup.html"
@@ -17,6 +17,8 @@
   "permissions": [
     "activeTab",
     "cookies",
+    "https://app.vmei.com/*",
+    "http://misc.kimiss.com/*",
     "https://live.kuaishou.com/*",
     "https://www.iesdouyin.com/*",
     "https://v.douyin.com/*"
