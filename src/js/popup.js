@@ -11,7 +11,7 @@ const setResult = (value) => {
     value.forEach(
         (v) => {
             let node = document.createElement('li');
-            node.innerHTML = '<img src="' + v[0] + '"><span>' + v[1] +
+            node.innerHTML = '<div class="img"><img src="' + v[0] + '"></div><span class="name">' + v[1] +
                 '</span><span>' + v[2] + '</span>';
             node.onclick = () => {
                 setUserId(v[2]);
