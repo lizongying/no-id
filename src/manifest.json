@@ -19,6 +19,8 @@
     "cookies",
     "https://app.vmei.com/*",
     "http://misc.kimiss.com/*",
+    "https://v.kuaishou.com/*",
+    "https://c.kuaishou.com/*",
     "https://live.kuaishou.com/*",
     "https://www.iesdouyin.com/*",
     "https://v.douyin.com/*"

@@ -4,30 +4,54 @@ const notify = (data) => {
     popup.$ui[data[0]](...data.slice(1));
 };
 
+// // Kuaishou
+// const getKuaishou = (query) => {
+//     if (!query.match(/kuaishou/)) {
+//         notify(['setUserId', '']);
+//         return;
+//     }
+//     let url = 'https://live.kuaishou.com/graphql';
+//     let data = {
+//         'operationName': 'sensitiveUserInfoQuery',
+//         'variables': {'principalId': query.split('?', 1)[0].split('/')[4]},
+//         'query': 'query sensitiveUserInfoQuery($principalId: String) {sensitiveUserInfo(principalId: $principalId) {userId}}',
+//     };
+//     console.log(data);
+//     fetch(url, {
+//         headers: {
+//             'content-type': 'application/json',
+//         },
+//         body: JSON.stringify(data),
+//         method: 'POST',
+//     }).then(function(response) {
+//         return response.text();
+//     }).then(function(text) {
+//         console.log(text);
+//         const re = /"userId":"(\d+?)"/;
+//         const result = text.match(re);
+//         if (result) {
+//             console.log(result[1]);
+//             notify(['setUserId', result[1]]);
+//         } else {
+//             notify(['setUserId', '']);
+//         }
+//     });
+// };
+
 // Kuaishou
 const getKuaishou = (query) => {
     if (!query.match(/kuaishou/)) {
         notify(['setUserId', '']);
         return;
     }
-    let url = 'https://live.kuaishou.com/graphql';
-    let data = {
-        'operationName': 'sensitiveUserInfoQuery',
-        'variables': {'principalId': query.split('?', 1)[0].split('/')[4]},
-        'query': 'query sensitiveUserInfoQuery($principalId: String) {sensitiveUserInfo(principalId: $principalId) {userId}}',
-    };
-    console.log(data);
+    let url = query.trim();
     fetch(url, {
-        headers: {
-            'content-type': 'application/json',
-        },
-        body: JSON.stringify(data),
-        method: 'POST',
     }).then(function(response) {
-        return response.text();
+        console.log(response.headers);
+        return response.url;
     }).then(function(text) {
         console.log(text);
-        const re = /"userId":"(\d+?)"/;
+        const re = /shareObjectId=(\d+)/;
         const result = text.match(re);
         if (result) {
             console.log(result[1]);
